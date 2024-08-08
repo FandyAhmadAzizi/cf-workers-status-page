@@ -1,6 +1,6 @@
 settings:
   title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  url: 'https://status.fandi.us.kg' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
@@ -15,26 +15,44 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
+  - id: cdn
+    name: CDN
+    url: 'https://cdn.fandi.my.id/'
+    method: GET
+    expectStatus: 200
+
   - id: anime-api
-    name: anime.fandi.my.id
-    description: 'Anime API.' # default=empty
-    url: 'https://anime.fandi.my.id/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
-    linkable: true # allows the title to be a link, default=true
+    name: Anime API
+    url: 'https://anime.fandi.my.id/'
+    method: GET
+    expectStatus: 200
 
   - id: komik-api
     name: Komik API
-    description: 'Komik API.'
     url: 'https://komik.fandi.my.id/'
     method: GET
     expectStatus: 200
-    followRedirect: false
-    linkable: true
 
   - id: swagger-api
     name: API
     url: 'https://api.fandi.my.id/'
+    method: GET
+    expectStatus: 200
+
+  - id: kana-whatsapp-bot
+    name: Kana (Whatsapp Bot)
+    url: 'https://kana.fandi.my.id/'
+    method: GET
+    expectStatus: 200
+
+  - id: dinime-whatsapp-bot
+    name: Dinime (Whatsapp Bot)
+    url: 'https://ruka.fandi.my.id/'
+    method: GET
+    expectStatus: 200
+
+  - id: dinime-telegram-bot
+    name: Dinime (Telegram Bot)
+    url: 'https://telebot.fandi.my.id/'
     method: GET
     expectStatus: 200
