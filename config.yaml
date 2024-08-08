@@ -23,3 +23,18 @@ monitors:
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
     linkable: true # allows the title to be a link, default=true
+
+  - id: komik-api
+    name: Komik API
+    description: 'Komik API.'
+    url: 'https://komik.fandi.my.id/'
+    method: GET
+    expectStatus: 200
+    followRedirect: false
+    linkable: true
+
+  - id: swagger-api
+    name: API
+    url: 'https://api.fandi.my.id/'
+    method: GET
+    expectStatus: 200
